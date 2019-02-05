@@ -156,3 +156,78 @@ func TestTest7(t *testing.T) {
 		}
 	}
 }
+
+func TestTest8(t *testing.T) {
+	testTable := []struct {
+		nums    []int
+		i       int
+		n       int
+		expect1 []int
+		expect2 []int
+	}{
+		{[]int{0, 1, 2}, 0, 5, []int{5}, []int{0, 1, 2}},
+		{[]int{0, 1, 2}, 1, 5, []int{0, 5}, []int{1, 2}},
+		{[]int{0, 1, 2}, 2, 5, []int{0, 1, 5}, []int{2}},
+		{[]int{0, 1, 2}, 3, 5, []int{0, 1, 2, 5}, []int{}},
+	}
+
+	for i, test := range testTable {
+		actual1, actual2 := Test8(test.nums, test.i, test.n)
+		if !reflect.DeepEqual(test.expect1, actual1) {
+			t.Fatalf("%s No.%02d-1 失敗\n期待: %+v\n実際: %+v", t.Name(), i+1, test.expect1, actual1)
+		}
+		if !reflect.DeepEqual(test.expect2, actual2) {
+			t.Fatalf("%s No.%02d-2 失敗\n期待: %+v\n実際: %+v", t.Name(), i+1, test.expect2, actual2)
+		}
+	}
+}
+
+func TestTest9(t *testing.T) {
+	testTable := []struct {
+		nums    []int
+		i       int
+		n       int
+		expect1 []int
+		expect2 []int
+	}{
+		{[]int{0, 1, 2}, 0, 5, []int{5}, []int{0, 1, 2}},
+		{[]int{0, 1, 2}, 1, 5, []int{0, 5}, []int{1, 2}},
+		{[]int{0, 1, 2}, 2, 5, []int{0, 1, 5}, []int{2}},
+		{[]int{0, 1, 2}, 3, 5, []int{0, 1, 2, 5}, []int{}},
+	}
+
+	for i, test := range testTable {
+		actual1, actual2 := Test9(test.nums, test.i, test.n)
+		if !reflect.DeepEqual(test.expect1, actual1) {
+			t.Fatalf("%s No.%02d-1 失敗\n期待: %+v\n実際: %+v", t.Name(), i+1, test.expect1, actual1)
+		}
+		if !reflect.DeepEqual(test.expect2, actual2) {
+			t.Fatalf("%s No.%02d-2 失敗\n期待: %+v\n実際: %+v", t.Name(), i+1, test.expect2, actual2)
+		}
+	}
+}
+
+func TestTest10(t *testing.T) {
+	testTable := []struct {
+		nums    []int
+		i       int
+		n       int
+		expect1 []int
+		expect2 []int
+	}{
+		{[]int{0, 1, 2}, 0, 5, []int{5}, []int{0, 1, 2}},
+		{[]int{0, 1, 2}, 1, 5, []int{0, 5}, []int{1, 2}},
+		{[]int{0, 1, 2}, 2, 5, []int{0, 1, 5}, []int{2}},
+		{[]int{0, 1, 2}, 3, 5, []int{0, 1, 2, 5}, []int{}},
+	}
+
+	for i, test := range testTable {
+		actual1, actual2 := Test10(test.nums, test.i, test.n)
+		if !reflect.DeepEqual(test.expect1, actual1) {
+			t.Fatalf("%s No.%02d-1 失敗\n期待: %+v\n実際: %+v", t.Name(), i+1, test.expect1, actual1)
+		}
+		if !reflect.DeepEqual(test.expect2, actual2) {
+			t.Fatalf("%s No.%02d-2 失敗\n期待: %+v\n実際: %+v", t.Name(), i+1, test.expect2, actual2)
+		}
+	}
+}

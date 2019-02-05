@@ -82,3 +82,36 @@ func Test6(nums []int, i, n int) ([]int, []int) {
 func Test7(nums []int, i, n int) ([]int, []int) {
 	return append(nums[:i], n), nums[i:]
 }
+
+// i番目で分割した新しいsliceを作成して、前のsliceの最後にnをつけて返す
+func Test8(nums []int, i, n int) ([]int, []int) {
+	a := make([]int, 0)
+	b := make([]int, 0)
+
+	for j, v := range nums {
+		if j < i {
+			a = append(a, v)
+		} else {
+			b = append(b, v)
+		}
+	}
+
+	return append(a, n), b
+}
+
+// 単純に代入では複製されない
+func Test9(nums []int, i, n int) ([]int, []int) {
+	a := nums
+	b := nums
+
+	return append(a[:i], n), b[i:]
+}
+
+// copyすることはできる
+func Test10(nums []int, i, n int) ([]int, []int) {
+	a, b := make([]int, len(nums)), make([]int, len(nums))
+	copy(a, nums)
+	copy(b, nums)
+
+	return append(a[:i], n), b[i:]
+}
