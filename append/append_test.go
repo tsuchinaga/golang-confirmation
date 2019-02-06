@@ -231,3 +231,22 @@ func TestTest10(t *testing.T) {
 		}
 	}
 }
+
+func TestTest11(t *testing.T) {
+	nums := []int{0, 1, 2}
+
+	testTable := []struct {
+		nums []int
+		i    int
+	}{
+		{nums, 0},
+		{nums, 1},
+		{nums, 2},
+		{nums, 3},
+	}
+
+	for i, test := range testTable {
+		actual1, actual2, actual3 := Test11(test.nums, test.i)
+		t.Logf("%s No.%02d: actual1=%s, actual2=%s, actual3=%s", t.Name(), i+1, actual1, actual2, actual3)
+	}
+}

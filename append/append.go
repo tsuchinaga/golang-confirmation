@@ -1,5 +1,7 @@
 package append
 
+import "fmt"
+
 // appendしただけでは何の影響もない
 func Test1(n int) []int {
 	list := make([]int, 0)
@@ -114,4 +116,9 @@ func Test10(nums []int, i, n int) ([]int, []int) {
 	copy(b, nums)
 
 	return append(a[:i], n), b[i:]
+}
+
+// slice自体と、抽出されたsliceのアドレスを見てみる
+func Test11(nums []int, i int) (string, string, string) {
+	return fmt.Sprintf("%p", nums), fmt.Sprintf("%p", nums[:i]), fmt.Sprintf("%p", nums[i:])
 }
