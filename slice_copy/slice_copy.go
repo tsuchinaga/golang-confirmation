@@ -3,7 +3,7 @@ package slice_copy
 // numsをi番目で切った配列を、copyして返す
 func SliceCopy1(nums []int, i int) ([]int, []int) {
 
-	// out of bounds回避
+	// out of length回避
 	if i < 0 || len(nums)-1 < i {
 		i = len(nums)
 	}
@@ -17,7 +17,7 @@ func SliceCopy1(nums []int, i int) ([]int, []int) {
 // numsをi番目で切った配列を、copyして返す ※aへのcopy方法を少しかえただけ
 func SliceCopy2(nums []int, i int) ([]int, []int) {
 
-	// out of bounds回避
+	// out of length回避
 	if i < 0 || len(nums)-1 < i {
 		i = len(nums)
 	}
