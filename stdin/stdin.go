@@ -11,7 +11,8 @@ import (
 
 func main() {
 	// FmtScan()
-	ScanWords()
+	// ScanWords()
+	ScanBytes()
 }
 
 // 10.txt       0.494s
@@ -56,4 +57,14 @@ func ScanWords() {
 	}
 
 	fmt.Println(sum)
+}
+
+func ScanBytes() {
+	sc := bufio.NewScanner(os.Stdin)
+	sc.Split(bufio.ScanWords)
+
+	sc.Buffer(make([]byte, 200000*1+1), 200000)
+
+	sc.Scan()
+	fmt.Println(sc.Text())
 }
