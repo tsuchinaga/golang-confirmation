@@ -11,9 +11,9 @@ var (
 )
 
 func WrapErrorFromBase(message string) error {
-	return fmt.Errorf("%w: %s", BaseError, message)
+	return fmt.Errorf("%w: %v", BaseError, message)
 }
 
 func WrapErrorFromSuper(message string) error {
-	return fmt.Errorf("%w: %s", SuperError, message)
+	return fmt.Errorf("%w: %v", SuperError, message)
 }
