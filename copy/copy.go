@@ -57,9 +57,9 @@ func (p *PersonStruct) Copy() *PersonStruct {
 
 // Slice - sliceを複製する
 func Slice(ns []int) []int {
-	nss := make([]int, len(ns))
-	copy(nss, ns)
-	return nss
+	ns2 := make([]int, len(ns))
+	copy(ns2, ns)
+	return ns2
 }
 
 // Map - mapを複製する
