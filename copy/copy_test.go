@@ -119,7 +119,7 @@ func TestSlice(t *testing.T) {
 	ns := []int{3}
 	actual := Slice(ns)
 
-	ns = append(ns, 6)
+	ns[0] = 6
 	if reflect.DeepEqual(ns, actual) {
 		t.Fatalf("%s 失敗\n元: %v\n先: %v\n", t.Name(), ns, actual)
 	}
