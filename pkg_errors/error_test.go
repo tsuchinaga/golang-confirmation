@@ -1,9 +1,10 @@
 package error
 
 import (
-	"errors"
 	"fmt"
 	"testing"
+
+	"github.com/pkg/errors"
 )
 
 func TestWrapError(t *testing.T) {
@@ -90,6 +91,8 @@ func Test_WrapOriginalErrorFromBase(t *testing.T) {
 			got := WrapOriginalErrorFromBase()
 			if errors.Is(got, test.is) != test.want {
 				t.Errorf("%s error\nwant: %+v\ngot: %+v, unwrap: %+v\n", t.Name(), test.is, got, errors.Unwrap(got))
+			} else {
+				t.Logf("%+v\n", got)
 			}
 		})
 	}
@@ -113,6 +116,8 @@ func Test_WrapBaseErrorFromOriginal(t *testing.T) {
 			got := WrapBaseErrorFromOriginal()
 			if errors.Is(got, test.is) != test.want {
 				t.Errorf("%s error\nwant: %+v\ngot: %+v, unwrap: %+v\n", t.Name(), test.is, got, errors.Unwrap(got))
+			} else {
+				t.Logf("%+v\n", got)
 			}
 		})
 	}
